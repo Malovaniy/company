@@ -1,1 +1,235 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: 'Manrope'
+}
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.d-block {
+  display: block !important;
+}
+
+.arrow-hover {
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .def-svg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+    transform: translate(0px, 0px);
+  }
+
+  .hidden-svg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+    transform: translate(-100px, 100px);
+  }
+
+  .arrow-wrap {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &:hover {
+    div {
+      .def-svg {
+        transform: translate(100px, -100px);
+      }
+
+      .hidden-svg {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}
+.crd-logo{
+  margin-bottom: 0;
+  margin-top: 2px;
+  font-size: 0.6875rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+  padding-right: 2.5rem;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.crd-desc{
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  font-size: 1.375rem;
+  color: #80848D;
+}
+.crd-ttl{
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.stic-btn {
+  position: sticky;
+  top: 80px;
+}
+
+.sub-ttl {
+  font-size: 3.33333vw;
+  letter-spacing: -0.04em;
+  font-weight: 600;
+  font-family: 'Manrope', sans-serif;
+}
+
+.ttl {
+  font-weight: 700;
+  font-size: 5vw;
+  // font-size: 2.5rem;
+  font-family: 'Manrope', sans-serif;
+  text-transform: uppercase;
+
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.content-wrap {
+  padding: 3%;
+  ::-webkit-scrollbar {
+    width: 4px !important;
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #AFAFAF;
+    border-radius: 25px;
+  }
+}
+.txt-overflow{
+  color: #80848D;
+  h2{
+    font-size: 1.8em;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  p{
+    margin-bottom: 10px;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.sticky-0 {
+
+  position: sticky;
+  top: 0px;
+}
+
+.ol-circle {
+  display: flex;
+  color: #80848D;
+  align-items: center;
+  font-weight: 700;
+  font-size: 0.755rem;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  span{
+    margin-left: 1rem;
+  }
+
+  &::before {
+    content: '';
+    display: flex;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 50%;
+    background-color: #80848D;
+    // margin-right: 1rem;
+  }
+}
+
+.hover-img {
+  .hover-img-container {
+    overflow: hidden;
+    border-radius: 15px;
+  }
+
+  img {
+    transition: all 0.4s;
+  }
+
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.contect-us-btn {
+  width: 200px;
+  height: 200px;
+  z-index: 9;
+
+  cursor: pointer;
+  left: 70%;
+
+  .content-wrap-btn {
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #3E12E3;
+
+    p {
+      font-size: 1.3rem;
+      margin-top: 10px;
+
+      text-align: center;
+      word-spacing: 9999999px;
+    }
+
+  }
+
+  &:hover {
+    .content-wrap-btn {
+      width: 75%;
+      height: 75%;
+
+    }
+
+  }
+}
+.border-arround{
+  border-color: rgba(175, 175, 175, 0.5882352941);
+}

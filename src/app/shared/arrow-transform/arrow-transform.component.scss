@@ -1,0 +1,43 @@
+
+.arrow-hover {
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .def-svg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+    transform: translate(0px, 0px);
+  }
+
+  .hidden-svg {
+    top: 0;
+    left: 0;
+    position: absolute;
+    transition: all 0.3s;
+    transform: translate(-100px, 100px);
+  }
+
+  .arrow-wrap {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &:hover {
+    div {
+      .def-svg {
+        transform: translate(100px, -100px);
+      }
+
+      .hidden-svg {
+        transform: translate(0px, 0px);
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.services-content {
+  color: white;
+  padding: 3%;
+  display: flex;
+  justify-content: space-between;
+
+  .services-wrap {
+    width: 33%;
+    &:first-child{
+      width: 25%;
+    }
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .btn-all-serv {
+      width: 150px;
+      color: white;
+      background-color: transparent;
+      border: 0px;
+      display: flex;
+      justify-content: space-between;
+
+      &:hover {
+        .arrows {
+          background-color: #3E12E3;
+        }
+      }
+
+      .arrows {
+        border-radius: 50%;
+        display: flex;
+        width: 30px;
+        height: 30px;
+        transition: all 0.3s;
+        justify-content: center;
+        align-items: center;
+
+        div {
+          transform: scale(0.5);
+        }
+
+        border: 1px solid #fff;
+      }
+    }
+  }
+
+  .services-btns {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    border-bottom: rgb(74, 74, 74) 1px solid;
+    padding: 16px 0px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      transition: all 0.3s;
+      height: 1px;
+      background-color: #fff;
+      left: 0;
+      width: 0px;
+    }
+
+    &:hover {
+      &::before {
+        content: '';
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+      }
+    }
+
+  }
+}
+
+.float-span{
+  width: 15.625rem;
+  height: 4.45rem;
+  float: left;
+}
+.num{
+  line-height: 0.94;
+  font-weight: 700;
+  font-size: 12rem;
+  color: #719cff;
+}
+.bg-img{
+  background-image: url(https://wezom.com.ua/images/our-approach/bg.webp);
+  padding: 35px;
+  background-position: center;
+  border-radius: 2.5rem;
+  background-size: contain;
+  height: 75vh;
+  margin-top: 5%;
+}
+.contect-us-btn{
+  position: relative;
+  left: 0px;
+}
+.stars{
+  fill: red;
+}

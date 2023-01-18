@@ -1,0 +1,15 @@
+.dark-info-block{
+  p{
+    &:first-child{
+      color: #719cff;
+      line-height: 1;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      font-size: 3.33333vw;
+      border-right: 1px solid #AFAFAF;
+    }
+  }
+}
+.crd-wrp{
+  width: 39% !important;
+}

@@ -1,0 +1,8 @@
+<button [ngClass]="color" class="arrow-hover">
+  <span [style.font-size]="fontSize">
+    {{message}}
+  </span>
+  <span *ngIf="isArrow" class="ml-4">
+    <arrow-transform [isDark]="isDark" [width]="'12px'"></arrow-transform>
+  </span>
+</button>

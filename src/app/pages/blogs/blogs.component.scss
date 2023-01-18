@@ -1,0 +1,24 @@
+.type-paragraph{
+  padding: 0.4375rem 1rem;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  &.gr-color{
+    background-color: rgb(208, 240, 111);
+
+  }
+  &.bl-color{
+    background-color: rgb(152, 175, 233)
+}
+  &.rd-color{
+    background-color: rgb(228, 132, 132);
+}
+}
+.arrow-hover{
+  transition: all 0.3s;
+
+  &:hover {
+    .arrows {
+      background-color: #3E12E3;
+    }
+  }
+}
