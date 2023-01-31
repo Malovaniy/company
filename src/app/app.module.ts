@@ -27,8 +27,16 @@ import { AqctSpaModule } from './modules/aqct-spa/aqct-spa.module';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
 
 
+// export function HttpLoaderFactory(http: HttpClient) {
+//   return new TranslateHttpLoader(http, 'company/assets/i18n');
+// }
+
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(
+    http, 
+    '../company/assets/i18n/', // or whatever path you're using
+    '.json'
+  );
 }
 
 @NgModule({
