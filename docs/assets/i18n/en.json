@@ -1,0 +1,14 @@
+{
+    "main": {
+        "header-service": "Service",
+        "header-keys": "Keys",
+        "header-company": "Сompany",
+        "header-blog": "Blog",
+        "header-expertise": "Expertise",
+        "header-contacts": "Contacts",
+        "header-btn": "Connect with us",
+        "header-num": "0 800 750 772",
+        "header-numTxt": "For free in Ukraine"
+    }
+}
+  
