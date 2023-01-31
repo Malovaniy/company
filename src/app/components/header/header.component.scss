@@ -21,3 +21,62 @@ header{
     }
   }
 }
+.burger-content{
+  span{
+   border-radius: 10px;
+  }
+}
+.hide-lang-menu{
+  height: 0px;
+  overflow: hidden;
+  transition: all 0.5s;
+  position: absolute;
+}
+.openMenu{
+  height: 50px !important;
+}
+
+.burger-content-wrp{
+  width: 0px;
+  transition: all 0.4s;
+  height: 100vh;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  overflow: hidden;
+  .bur-wrp{
+    width: 40vw;
+    *{
+      color: white;
+    }
+  }
+}
+.openBurger{
+  z-index: 111;
+  width: 40vw;
+  background-color: black;
+}
+@media screen and (max-width: 600px) {
+  .openBurger, .bur-wrp{
+    width: 100vw;
+  }
+
+}
+.bg-burg{
+  width: 98vw;
+  height: 100vh !important;
+  visibility: hidden;
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  transition: all 0.4s;
+}
+.bg-started{
+  visibility: visible;
+  background-color: rgba(62, 18, 227, 0.9);
+
+}
+.selectedLan{
+  background-color: rgba(255, 255, 255, 0.408);
+  border-radius: 10px;
+}

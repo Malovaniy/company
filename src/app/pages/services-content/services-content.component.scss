@@ -86,10 +86,13 @@
   font-size: 12rem;
   color: #719cff;
 }
+
+
 .bg-img{
   background-image: url(https://wezom.com.ua/images/our-approach/bg.webp);
   padding: 35px;
   background-position: center;
+  position: relative;
   border-radius: 2.5rem;
   background-size: contain;
   height: 75vh;
@@ -101,4 +104,55 @@
 }
 .stars{
   fill: red;
+}
+@media screen and (max-width: 1100px) {
+  .num-wrp{
+    width: 60% !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contect-us-btn{
+  
+    position: absolute;
+    left: 68% !important;
+    top: 0px !important;
+
+  }
+  .hld-bt{
+    position: static;
+  }
+  .num-wrp{
+    width: 80% !important;
+    font-size: 15px;
+  }
+  .num{
+    font-size: 8rem
+  }
+  
+}
+
+@media screen and (max-width: 500px) {
+  .contect-us-btn{
+  
+    top: 0% !important;
+    left: 50% !important;
+  }
+  .num-wrp{
+    width: 95% !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .contect-us-btn{
+  
+    top: -10% !important;
+    left: 50% !important;
+  }
+  .num-wrp{
+    width: 99% !important;
+    font-size: 12px;
+  }
+  .num{
+    font-size: 6rem
+  }
 }

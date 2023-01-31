@@ -14,6 +14,12 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "company:build"
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -77,12 +83,6 @@
             }
           },
           "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "Company:build"
-          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",

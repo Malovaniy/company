@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -16,7 +16,20 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { ContactsFormComponent } from './pages/contacts-form/contacts-form.component';
 import { BtnHoveredComponent } from './shared/btn-hovered/btn-hovered.component';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageService } from './core/language.service';
+import { ClickOutsideModule } from 'ng-click-outside';
+import { EazimateModule } from './modules/eazimate/eazimate.module';
+import { AqctSpaModule } from './modules/aqct-spa/aqct-spa.module';
+import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
+
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -35,13 +48,25 @@ import {MatSelectModule} from '@angular/material/select';
   ],
   imports: [
     BrowserModule,
+    EazimateModule,
+    AqctSpaModule,
     MatInputModule,
     MatSelectModule,
+    HttpClientModule,
+    ClickOutsideModule,
     AppRoutingModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'ua',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
     SwiperModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [LanguageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

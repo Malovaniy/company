@@ -1,24 +1,54 @@
-<header>
+<header class="hdr">
+  <div class="burger-content" (click)="openBurger()"><span>=</span></div>
   <div class="w-44"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium x-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 172 28"><path d="M26.2 20.3H26.1L20.8 0H15.9L10.6 20.3H10.5L6.1 0H0L7.4 28H12.9L18.3 8.9H18.4L23.8 28H29.3L36.7 0H30.6L26.2 20.3ZM39.1001 28H57.6001V23.1H44.9001V16.1H56.9001V11.6H44.9001V4.8H57.6001V0H39.1001V28ZM81.7 3.8L67.5 23V23.1H82.1V28H60.5V24.2L74.7 5V4.8H60.8V0H81.7V3.8ZM164.9 0L156.9 19.9H156.7L148.8 0H142V28H147.2V9.1H147.4L155 27.7H158.7L166.3 9.1H166.4V28H171.6V0H164.9ZM98.6 0H123.1C131.8 0 138.9 6.3 138.9 14C138.9 21.7 131.8 28 123.1 28H98.6C89.9 28 82.8 21.7 82.8 14C82.8 6.3 89.9 0 98.6 0ZM98.6 23.1H123.1C129.6 23.1 133.9 18.5 133.9 14C133.9 9.5 129.7 4.9 123.1 4.9H98.6C92 4.9 87.7 9.5 87.7 14C87.7 18.5 92 23.1 98.6 23.1Z"></path></svg></div>
-  <div>
-    <a class="mx-3" href="">Послуги</a>
-    <a class="mx-3" href="">Експертиза</a>
-    <a class="mx-3" href="">Кейси</a>
-    <a class="mx-3" href="">Компанія</a>
-    <a class="mx-3" href="">Блог</a>
-    <a class="mx-3" href="">Контакти</a>
+  <div class="head-content-nav flex">
+    <a class="mx-3" href=""> {{ 'main.header-service' | translate }} </a>
+    <a class="mx-3" href=""> {{ 'main.header-expertise' | translate }}</a>
+    <a class="mx-3" href="">{{ 'main.header-keys' | translate }}</a>
+    <a class="mx-3" href="">{{ 'main.header-company' | translate }}</a>
+    <a class="mx-3" href="">{{ 'main.header-blog' | translate }}</a>
+    <a class="mx-3" href="">{{ 'main.header-contacts' | translate }}</a>
   </div>
   <div class="header-contacts">
-    <div class="mx-2">
+    <div class="mx-2 hed-phone">
       <p>0 800 750 772</p>
       <p>Безкоштовно по Україні</p>
     </div>
-    <div class="mx-2 font-bold">
+    <div class="mx-2 font-bold cont-us-btn">
       <app-btn-hovered [message]="'Звязатися з нами'" [fontSize]="'0.75rem'"[color]="'dark'"></app-btn-hovered>
     </div>
-    <div class="mx-2">
-      <p>Ua</p>
+    <div class="mx-2 relative" (clickOutside)="closeLangMenu()"  (click)="openLangMenu()">
+      <p class="cursor-pointer">{{selectetLang}}</p>
+      <div class="hide-lang-menu flex flex-col" [class.openMenu]="isOpenMenu">
+        <ng-container  *ngFor="let item of languages" >
+        <p (click)="setLang(item)" class="cursor-pointer" *ngIf="item !== selectetLang">{{item}}</p>
+      </ng-container>
+      </div >
     </div>
   </div>
 
 </header>
+
+<div class="burger-content-wrp" [class.openBurger]="isBurgerOpened">
+  <div class="bur-wrp p-6">
+    <div class="w-44"><svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium x-vubbuv" focusable="false" aria-hidden="true" viewBox="0 0 172 28"><path fill="#fff" d="M26.2 20.3H26.1L20.8 0H15.9L10.6 20.3H10.5L6.1 0H0L7.4 28H12.9L18.3 8.9H18.4L23.8 28H29.3L36.7 0H30.6L26.2 20.3ZM39.1001 28H57.6001V23.1H44.9001V16.1H56.9001V11.6H44.9001V4.8H57.6001V0H39.1001V28ZM81.7 3.8L67.5 23V23.1H82.1V28H60.5V24.2L74.7 5V4.8H60.8V0H81.7V3.8ZM164.9 0L156.9 19.9H156.7L148.8 0H142V28H147.2V9.1H147.4L155 27.7H158.7L166.3 9.1H166.4V28H171.6V0H164.9ZM98.6 0H123.1C131.8 0 138.9 6.3 138.9 14C138.9 21.7 131.8 28 123.1 28H98.6C89.9 28 82.8 21.7 82.8 14C82.8 6.3 89.9 0 98.6 0ZM98.6 23.1H123.1C129.6 23.1 133.9 18.5 133.9 14C133.9 9.5 129.7 4.9 123.1 4.9H98.6C92 4.9 87.7 9.5 87.7 14C87.7 18.5 92 23.1 98.6 23.1Z"></path></svg></div>
+
+    <div class="flex mt-8">
+      <ng-container  *ngFor="let item of languages" >
+        <p (click)="setLang(item)" class="cursor-pointer px-2" [class.selectedLan]="item == selectetLang ">{{item}}</p>
+      </ng-container>
+    </div>
+    
+    <hr class="mt-6">
+
+    <div class=" mt-4 flex flex-col">
+      <a class="my-3" href=""> {{ 'main.header-service' | translate }} </a>
+      <a class="my-3" href=""> {{ 'main.header-expertise' | translate }}</a>
+      <a class="my-3" href="">{{ 'main.header-keys' | translate }}</a>
+      <a class="my-3" href="">{{ 'main.header-company' | translate }}</a>
+      <a class="my-3" href="">{{ 'main.header-blog' | translate }}</a>
+      <a class="my-3" href="">{{ 'main.header-contacts' | translate }}</a>
+    </div>
+  </div>
+</div>
+<div class="bg-burg" (click)="closeBurger()" [class.bg-started]="isBurgerOpened" ></div>

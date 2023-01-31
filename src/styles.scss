@@ -11,6 +11,8 @@
 @tailwind components;
 @tailwind utilities;
 
+.lending-content{
+  max-width: 100vw;
 .d-block {
   display: block !important;
 }
@@ -166,6 +168,7 @@ body {
     content: '';
     display: flex;
     width: 0.625rem;
+    min-width: 0.625rem;
     height: 0.625rem;
     border-radius: 50%;
     background-color: #80848D;
@@ -232,4 +235,367 @@ body {
 }
 .border-arround{
   border-color: rgba(175, 175, 175, 0.5882352941);
+}
+.burger-content{
+  display: none;
+  cursor: pointer;
+  width: 13%;
+  font-size: 45px;
+}
+
+.chld-mr-2{
+  *{
+    margin: 0px 10px;
+  }
+}
+@media screen and (max-width: 1200px) {
+
+  
+  .contacts-content{
+    .cont-flex {
+      padding: 30px 30px;
+    }
+  }
+  
+  .md-border-left{
+    border-left: 1px solid;
+  }
+
+  .img-hld{
+    width: 50% !important;
+  }
+  .md-flex-row{
+    flex-direction: row !important;
+  }
+
+  .md-flex-start{
+    justify-content: flex-start !important;
+  }
+  .bg-img{
+    height: auto !important;
+  }
+
+  .port-case{
+    padding-top: 0px !important;
+    margin-top: 3%;
+    justify-content: flex-end !important;
+    flex-wrap: wrap !important;
+    position: relative;
+
+    .case{
+      left: 3%;
+      width: 30% !important;
+      height: 100%;
+      position: absolute;
+    }
+    .case-ser{
+      width: 28.1% !important;
+    }
+    img{
+      width: 100%;
+    }
+    .serv-case{
+      height: 100%;
+      p{
+        margin-top: 55px;
+        margin-bottom: 35px;
+      }
+      .btn-all-serv{
+        position: absolute;
+        margin-top: 5px !important;
+        top: 0px;
+      }
+    }
+  
+    .case-flx{
+      padding-left: 7%;
+      border-right: 0px;
+      width: 70% !important;
+    }
+  }
+  .serv-case{
+    .serv-lst{
+      justify-content: flex-start !important;
+      p{
+        margin-right: 25px;
+      }
+    }
+   .case{
+    justify-content: flex-start !important;
+    margin-right: 20px;
+   }
+  }
+  .hed-phone{
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  main .hd-content div p{
+    font-size: 1rem !important;
+  }
+  
+}
+
+@media screen and (max-width: 1000px) {
+  .hdr{
+    flex-direction: row-reverse;
+    .burger-content{
+      display: flex;
+      justify-content: end;
+    }
+  }
+  .smd-flex-wrap{
+    flex-wrap: wrap;
+  }
+  
+  .img-hld{
+    width: 95% !important;
+    min-height: 550px;
+    margin-bottom: 5%;
+  }
+  .burger-content{
+    display: block;
+  }
+  .header-contacts{
+    :not(.cont-us-btn, .cont-us-btn *){
+      display: none;
+    }
+  }
+  main .hd-content div p{
+    font-size: 0.8rem !important;
+  }
+  .head-content-nav{
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .contect-us-btn{
+    width: 150px;
+    height: 150px;
+    left: 50%;
+    p{
+      font-size: 1rem !important;
+    }
+  }
+  main .hd-content div{
+    width: 70% !important;
+  }
+  .btn-all-serv{
+    top: 3% !important;
+  }
+  .content-wrap, .services-content{
+    padding: 3% 6% !important;
+  }
+  .smd-dnone{
+    display: none;
+  }
+  .smd-flex-col{
+    flex-direction: column;
+  }
+  .smd-align-center{
+    align-items: center;
+  }
+  .smd-w-70{
+    width: 70%;
+  }
+  .smd-w-30{
+    width: 30%;
+  }
+  .smd-border-bt-0{
+    border-bottom: 0px;
+  }
+  .smd-mb-2{
+    margin-bottom: 2rem;
+  }
+  
+  .cont-us-adp-wrp{
+    align-items: center;
+    flex-direction: column;
+    .cont-us-adp{
+      border-right: 0px;
+      width: 70%;
+      .img-hld{
+        min-height: 400px !important;
+      }
+    }
+  }
+  .new-case{
+    .port-case {
+      flex-direction: column-reverse !important;
+
+      .case-flx{
+        flex-direction: column-reverse !important;
+      }
+    }
+
+  }
+  .port-case {
+    &:not(.serv-case){
+      flex-direction: column;
+      align-items: center;
+    }
+    *{
+      border-right: 0px;
+    }
+      justify-content: center !important;
+   .case-flx{
+    padding-left: 0rem;
+    padding-right: 0rem;
+    display: flex;
+    flex-direction: column;
+    &:last-child{
+      .w-full,.my-8 , .h-1 , .border-b, .border-arround , .border-solid{
+        &:last-child{
+          display: none;
+        }
+      }
+    }
+   }
+   .case-ser{
+    width: 70% !important;
+    &.pr-12{
+      padding-left: 0rem;
+      padding-right: 0rem;
+     }
+   }
+    .case{
+     width: 70% !important;
+     position: static !important;
+     &.pr-16{
+      padding-left: 0rem;
+      padding-right: 0rem;
+     }
+     &.pr-12{
+      padding-left: 0rem;
+      padding-right: 0rem;
+     }
+     img{
+      width: 50%;
+      margin: auto;
+     }
+ 
+    }
+ 
+  }
+ 
+ }
+ 
+
+@media screen and (max-width: 700px) {
+  header{
+    padding: 0px 10px !important;
+  }
+  .ssm-w-full{
+    width: 100%;
+  }
+  .ssm-marg-0{
+    margin: 0px;
+  }
+  .ssm-pad-t-0{
+    padding-top: 0px !important;
+  }
+  .ssm-margin-b-2 {
+    margin-bottom: 2rem;
+  }
+  .ssm-margin-b-1 {
+    margin-bottom: 1rem;
+  }
+  .ssm-flex-col {
+    flex-direction: column !important;
+  }
+  .ssm-border-left{
+    border-left: 0px;
+  }
+
+  .ssm-align-center{
+    align-items: center;
+  }
+
+  .smd-w-70{
+    width: 90% !important;
+  }
+
+  .cont-us-adp-wrp{
+    .cont-us-adp{
+      width: 90% !important;
+      .img-hld{
+        width: 60% !important;
+        margin-left: 15%;
+      }
+    }
+  }
+  .port-case {
+
+    .case-flx{
+      width: 90% !important;
+    }
+    .case{
+      width: 90% !important;
+    }
+    .case-ser{
+      width: 90% !important;
+    }
+  }
+
+
+}
+
+
+@media screen and (max-width: 600px) {
+  .sm-tx-big , .crd-desc{
+    font-size: 15px;
+  }
+  .contect-us-btn{
+    width: 150px;
+    height: 150px;
+    left:2% !important
+  }
+  .sm-column{
+    flex-direction: column;
+  }
+  .sm-mt-1{
+    margin-top: 1rem;
+  }
+
+  .sm-full{
+    width: 100% !important;
+  }
+
+  .sm-d-none{
+    display: none !important;
+  }
+  main .hd-content div{
+    width: 80% !important;
+  }
+
+  main .hd-content div p{
+    font-size: 0.7rem !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .cont-us-adp-wrp .cont-us-adp .img-hld{
+    margin-left: 8% !important;
+    width: 85% !important;
+  }
+  main .hd-content div p{
+    font-size: 0.6rem !important;
+  }
+}
+@media screen and (max-width: 450px) {
+  .cont-us-adp-wrp .cont-us-adp{
+
+    padding-right: 10px !important;
+  }
+}
+@media screen and (max-width: 400px) {
+  
+  main .hd-content div p{
+    font-size: 0.5rem !important;
+  }
+}
+@media screen and (max-width: 380px) {
+  .cont-us-adp-wrp .cont-us-adp{
+    padding-right: 0px !important;
+  }
+}
 }
