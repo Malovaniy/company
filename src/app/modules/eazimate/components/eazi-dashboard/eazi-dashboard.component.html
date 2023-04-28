@@ -1,0 +1,175 @@
+<div class="flex flex-col">
+    <div class="flex flex-col">
+        <div class="flex ">
+            <div class="w-1/2 mr-2 rounded-2xl bg-white dark:bg-slate-800  p-4 text-black dark:text-white">
+                <div class="flex px-3 justify-between">
+                    <p class="font-medium text-xl">Recent</p>
+                    <button mat-flat-button color="primary" (click)="addEstimate()">
+                        <mat-icon>add</mat-icon>
+                        <span class="ml-2">
+                            New Estimate
+                        </span>
+                    </button>
+                </div>
+                <div class=" scroll max-h-96 overflow-auto">
+
+                    <div *ngFor="let item of recaent"
+                        class="py-4 px-1 items-center hover:bg-gray-200 flex dark:hover:bg-slate-600 transition-all justify-between border-b border-slate-400 border-solid">
+                        <div>
+                            <p class="text-xs">{{item.name}}</p>
+                            <p class="text-xs text-slate-600 dark:text-slate-400">{{item.type}}</p>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon>chevron_right</mat-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="w-1/2 ml-2 sum-chart flex flex-col rounded-2xl text-black dark:text-white ml-3 bg-white dark:bg-slate-800 p-4">
+                <p class="font-medium text-xl">Call Forward Summary</p>   
+                <div class="h-1/2">
+                    <div class="flex h-full justify-between mt-4">
+                        <div class="w-1/2 h-full  mx-2 info-block-big flex flex-col items-center justify-center">
+                            <p class="text-sm">0</p>
+                            <p class="text-xs">Issues</p>
+                        </div>
+                        <div class="w-1/2 h-full mx-2 info-block-big  flex flex-col items-center justify-center">
+                            <p class="text-sm">0</p>
+                            <p class="text-xs">Issues</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-1/2">
+                    <div class="flex h-full justify-between mt-4">
+                        <div class="w-1/2 h-full mx-2 info-block-big flex flex-col items-center justify-center">
+                            <p class="text-sm">12</p>
+                            <p class="text-xs">Awaiting Acknowledgement</p>
+                        </div>
+                        <div class="w-1/2 h-full mx-2 info-block-big  flex flex-col items-center justify-center">
+                            <p class="text-sm">3</p>
+                            <p class="text-xs">Not Yet Called For</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full sum-chart mt-6 flex rounded-2xl text-black dark:text-white bg-white dark:bg-slate-800 p-4">
+            <div class="w-1/2 flex flex-col">
+                <p class="font-medium text-xl">Summary</p>
+                <div class="h-full mt-4">
+                    <ng-container *ngIf="this.chartOptions?.series">
+                        <apx-chart class="h-80 w-full" [series]="chartOptions.series" [chart]="chartOptions.chart"
+                            [xaxis]="chartOptions.xaxis" [dataLabels]="chartOptions.dataLabels"
+                            [grid]="chartOptions.grid" [stroke]="chartOptions.stroke" [title]="chartOptions.title"
+                            [tooltip]="chartOptions.tooltip">
+                        </apx-chart>
+                    </ng-container>
+
+
+                </div>
+            </div>
+            <div class="w-1/2 ml-4">
+                <div class="flex justify-end">
+                    <p class="mx-1 year-select px-5 p-2 " (click)="changeYear(item)"
+                        [ngClass]="{'active': activeYear == item}" *ngFor="let item of years">{{item}}</p>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <div class="w-1/4 mx-2 info-block flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.draft.value}}</p>
+                        <p class="text-xs">Draft {{sammury?.obj?.draft.count}}</p>
+                    </div>
+                    <div class="w-1/4 mx-2 info-block flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.sent.value}}</p>
+                        <p class="text-xs">Sent {{sammury?.obj?.sent.count}}</p>
+                    </div>
+                    <div class="w-1/4 mx-2 info-block flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.accepted.value}}</p>
+                        <p class="text-xs">Accepted {{sammury?.obj?.accepted.count}}</p>
+                    </div>
+                    <div class="w-1/4 mx-2 info-block flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.expired.value}}</p>
+                        <p class="text-xs">Expired {{sammury?.obj?.expired.count}}</p>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-4">
+                    <div class="w-1/2 mx-2 info-block flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.sentYtd.value}}</p>
+                        <p class="text-xs">Expired {{sammury?.obj?.sentYtd.count}}</p>
+                    </div>
+                    <div class="w-1/2 mx-2 info-block  flex flex-col items-center justify-center">
+                        <p class="text-sm">{{sammury?.obj?.completedYtd.value}}</p>
+                        <p class="text-xs">Expired {{sammury?.obj?.completedYtd.count}}</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="flex mt-6">
+            <div
+                class="w-1/2 sum-chart flex flex-col rounded-2xl text-black dark:text-white mr-3 bg-white dark:bg-slate-800 p-4">
+                <p class="font-medium text-xl">Invoices owed to you
+                </p>
+                <div class="flex flex-col items-end">
+                    <div class="flex w-5/12	text-xs justify-between">
+                        <p> 49 Draft invoices</p>
+                        <p> $197,727.14</p>
+                    </div>
+                    <div class="flex w-5/12	text-xs justify-between">
+                        <p> 0 Awaiting payment</p>
+                        <p> $0.00</p>
+                    </div>
+                    <div class="flex w-5/12 text-xs justify-between">
+                        <p>10 Overdue </p>
+                        <p>$1,106.64</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <ng-container *ngIf="this.chartOptionsSecond?.series">
+                        <apx-chart class="h-80 w-full" [series]="chartOptionsSecond.series"
+                            [chart]="chartOptionsSecond.chart" [xaxis]="chartOptionsSecond.xaxis"
+                            [dataLabels]="chartOptionsSecond.dataLabels" [grid]="chartOptionsSecond.grid"
+                            [stroke]="chartOptionsSecond.stroke" [title]="chartOptionsSecond.title"
+                            [tooltip]="chartOptionsSecond.tooltip">
+                        </apx-chart>
+                    </ng-container>
+                </div>
+            </div>
+
+            <div
+                class="w-1/2 sum-chart flex flex-col rounded-2xl text-black dark:text-white ml-3 bg-white dark:bg-slate-800 p-4">
+                <p class="font-medium text-xl">Orders</p>
+                <div class="flex flex-col items-end">
+                    <div class="flex w-5/12	text-xs justify-between">
+                        <p> 118 Draft orders</p>
+                        <p> $197,727.14</p>
+                    </div>
+                    <div class="flex w-5/12	text-xs justify-between">
+                        <p> 0 Awaiting delivery</p>
+                        <p> $0.00</p>
+                    </div>
+                    <div class="flex w-5/12 text-xs justify-between">
+                        <p>0 Overdue </p>
+                        <p>$1,106.64</p>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <ng-container *ngIf="this.chartOptionsSecond?.series">
+                        <apx-chart class="h-80 w-full" [series]="chartOptionsSecond.series"
+                            [chart]="chartOptionsSecond.chart" [xaxis]="chartOptionsSecond.xaxis"
+                            [dataLabels]="chartOptionsSecond.dataLabels" [grid]="chartOptionsSecond.grid"
+                            [stroke]="chartOptionsSecond.stroke" [title]="chartOptionsSecond.title"
+                            [tooltip]="chartOptionsSecond.tooltip">
+                        </apx-chart>
+                    </ng-container>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

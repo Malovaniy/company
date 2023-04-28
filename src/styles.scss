@@ -599,3 +599,50 @@ body {
   }
 }
 }
+.dark{
+  .mat-drawer-container, .mat-drawer, .mat-toolbar{
+    background-color: rgb(15 23 42) !important;
+  }
+}
+.eazimate{
+
+  .mat-drawer {
+    background-color: rgb(15 23 42) !important;
+  }
+  .mat-toolbar{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 5px;
+    background-color: #FFF;
+  }
+  .mat-drawer-container{
+    background-color: rgb(241,245,249);
+  }
+  .mat-toolbar{
+    border-bottom: solid 1px rgba(255,255,255,.12);
+  }
+  .mat-flat-button{
+    border-radius: 15px;
+    font-size: 13px;
+    &.mat-primary{
+      background-color: #4f46e5 !important;
+    }
+  }
+}
+.bg-color {
+  background-color: #1e293b;
+}
+.bg-color{
+  .mat-dialog-container{
+    border-radius: 30px !important;
+    background-color: #1e293b;
+  }
+}
+.mat-form-field-appearance-fill .mat-form-field-flex{
+  background-color: transparent
+}
+.mat-horizontal-content-container{
+  padding: 0 24px 0px 24px !important;
+}
+.apexcharts-tooltip {
+  background: #f3f3f3 !important;
+  color: #8d8d8d !important;
+}

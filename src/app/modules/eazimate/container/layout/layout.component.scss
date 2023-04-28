@@ -1,0 +1,53 @@
+app-layout {
+    .sum-chart {
+        .year-select {
+            border-radius: 23px;
+            cursor: pointer;
+            transition: all 0.2s;
+
+            &.active {
+                background-color: #f1f5f9;
+            }
+
+            &:hover {
+                background-color: #ddcece5f;
+            }
+        }
+
+        .info-block {
+            background-color: #f1f5f9;
+            height: 125px;
+        }
+
+        .info-block-big {
+            background-color: #f1f5f9;
+            height: 150px;
+        }
+    }
+}
+
+.dark {
+    app-layout {
+        .year-select {
+
+            &.active {
+                background-color: #293445;
+            }
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.02);
+            }
+        }
+
+        .info-block {
+            background-color: #293445;
+            height: 125px;
+        }
+
+        .info-block-big {
+            background-color: #293445;
+            height: 150px;
+
+        }
+    }
+}

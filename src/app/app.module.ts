@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule} from '@angular/material/input';
-import { AppRoutingModule } from './app-routing.module';
+import { appRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -25,18 +25,16 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { EazimateModule } from './modules/eazimate/eazimate.module';
 import { AqctSpaModule } from './modules/aqct-spa/aqct-spa.module';
 import { ExtraOptions, PreloadAllModules, RouterModule } from '@angular/router';
+import { SharedMaterialModule } from './shared-module/shared/shared.module';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
-
-// export function HttpLoaderFactory(http: HttpClient) {
-//   return new TranslateHttpLoader(http, 'company/assets/i18n');
-// }
+const routerConfig: ExtraOptions = {
+  preloadingStrategy: PreloadAllModules,
+  scrollPositionRestoration: 'enabled',
+};
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(
-    http, 
-    '../company/assets/i18n/', // or whatever path you're using
-    '.json'
-  );
+  return new TranslateHttpLoader(http);
 }
 
 @NgModule({
@@ -52,17 +50,15 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactUsComponent,
     BlogsComponent,
     ContactsFormComponent,
-    BtnHoveredComponent
+    BtnHoveredComponent,
   ],
   imports: [
     BrowserModule,
-    EazimateModule,
-    AqctSpaModule,
-    MatInputModule,
-    MatSelectModule,
+    RouterModule.forRoot(appRoutes, routerConfig),
     HttpClientModule,
+    SharedMaterialModule,
     ClickOutsideModule,
-    AppRoutingModule,
+    NgApexchartsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'ua',
       loader: {

@@ -1,0 +1,161 @@
+[
+  {
+    "id": "2021",
+    "data": {
+      "obj": {
+        "draft": {
+          "value": 10,
+          "count": 142
+        },
+        "sent": {
+          "value": 210,
+          "count": 122
+        },
+        "accepted": {
+          "value": 60,
+          "count": 132
+        },
+        "expired": {
+          "value": 210,
+          "count": 162
+        },
+        "sentYtd": {
+          "value": 250,
+          "count": 172
+        },
+        "completedYtd": {
+          "value": 620,
+          "count": 122
+        }
+      },
+      "chart": {
+        "date": [
+          "2021-10-17T03:24:00",
+          "2021-11-17T03:24:00",
+          "2021-12-17T03:24:00"
+        ],
+        "sent": [
+          12,
+          15,
+          17
+        ],
+        "accepted": [
+          11,
+          22,
+          44
+        ],
+        "completed": [
+          44,
+          24,
+          33
+        ]
+      }
+    }
+  },
+  {
+    "id": "2022",
+    "data": {
+      "obj": {
+        "draft": {
+          "value": 280,
+          "count": 412
+        },
+        "sent": {
+          "value": 204,
+          "count": 112
+        },
+        "accepted": {
+          "value": 260,
+          "count": 212
+        },
+        "expired": {
+          "value": 270,
+          "count": 132
+        },
+        "sentYtd": {
+          "value": 220,
+          "count": 152
+        },
+        "completedYtd": {
+          "value": 240,
+          "count": 12
+        }
+      },
+      "chart": {
+        "date": [
+          "2022-10-17T03:24:00",
+          "2022-11-17T03:24:00",
+          "2022-12-17T03:24:00"
+        ],
+        "sent": [
+          3,
+          7,
+          1
+        ],
+        "accepted": [
+          52,
+          12,
+          13
+        ],
+        "completed": [
+          61,
+          2,
+          13
+        ]
+      }
+    }
+  },
+  {
+    "id": "2023",
+    "data": {
+      "obj": {
+        "draft": {
+          "value": 2220,
+          "count": 1242
+        },
+        "sent": {
+          "value": 220,
+          "count": 132
+        },
+        "accepted": {
+          "value": 2420,
+          "count": 212
+        },
+        "expired": {
+          "value": 205,
+          "count": 612
+        },
+        "sentYtd": {
+          "value": 720,
+          "count": 162
+        },
+        "completedYtd": {
+          "value": 220,
+          "count": 172
+        }
+      },
+      "chart": {
+        "date": [
+          "2023-10-17T03:24:00",
+          "2023-11-17T03:24:00",
+          "2023-12-17T03:24:00"
+        ],
+        "sent": [
+          13,
+          1,
+          5
+        ],
+        "accepted": [
+          12,
+          31,
+          51
+        ],
+        "completed": [
+          21,
+          4,
+          12
+        ]
+      }
+    }
+  }
+]

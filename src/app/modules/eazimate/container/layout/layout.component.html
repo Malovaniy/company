@@ -1,0 +1,59 @@
+<main class="min-h-screen eazimate">
+    <mat-drawer-container class="example-container min-h-screen max-h-screen" autosize>
+        <mat-drawer #drawer class="example-sidenav w-72 top-0" mode="side">
+            <div class="relative w-full h-full ">
+                <div class="h-full flex flex-col  ">
+                    <div class="flex justify-between p-4 pl-5">
+                        <img class="w-32" src="../../../../../assets/img/logo-reversed-web.svg" />
+
+                        <button mat-icon-button color="primary" [matMenuTriggerFor]="menu"
+                            aria-label="Example icon button with a home icon">
+                            <mat-icon class="text-slate-400	">account_circle</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu" class=" bg-white text-black dark:text-white dark:bg-slate-800">
+                            <button class="text-black dark:text-white" mat-menu-item>Item 1</button>
+                            <button class="text-black dark:text-white"  mat-menu-item>Item 2</button>
+                        </mat-menu>
+                    </div>
+
+                    <div class="flex flex-col mx-8 mt-10">
+                        <div class="flex items-center">
+                            <mat-icon class="text-indigo-600 text-xl">work</mat-icon>
+                            <span class="ml-2 mt-1 text-sm"> Trader 4</span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="text-indigo-600 text-xl">person</mat-icon>
+                            <span class="ml-2 mt-1 text-sm"> Firstname Lastname</span>
+                        </div>
+                        <div class="flex items-center">
+                            <mat-icon class="text-indigo-600 text-xl">mail</mat-icon>
+                            <span class="ml-2 mt-1 text-sm">example@gmail.com</span>
+                        </div>
+                    </div>
+                
+                    <div class="nav p-3 mt-4" >
+                        <nav class="flex items-center w-full bg-slate-700 p-2 rounded-md pointer">
+                            <mat-icon>home</mat-icon>
+                            <span class="ml-4">Dashboard</span> </nav>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer>
+
+        <div class="example-sidenav-content max-h-screen">
+            <mat-toolbar>
+                <div class="flex items-center">
+                    <button mat-icon-button class="example-icon text-gray-600 dark:text-white" (click)="drawer.toggle()"
+                        aria-label="Example icon-button with menu icon">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <app-custom-switcher></app-custom-switcher>
+                    <span class="example-spacer"></span>
+                </div>
+            </mat-toolbar>
+            <div class="overflow-auto p-3">
+                <app-eazi-dashboard ></app-eazi-dashboard>
+            </div>
+        </div>
+    </mat-drawer-container>
+</main>

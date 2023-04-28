@@ -1,0 +1,13 @@
+<div
+  class="flex flex-row rounded-full ml-2 dark:bg-gray-700 border-gray-500 bg-gray-300 cursor-pointer"
+  (click)="toggle()"
+>
+  <ng-container *ngIf="mode === 'dark'">
+    <span class="h-6 w-6 rounded-full bg-gray-600"></span>
+    <mat-icon class="text-yellow-300 mr-1 ml-2">light_mode</mat-icon>
+  </ng-container>
+  <ng-container *ngIf="mode === 'light'">
+    <mat-icon class="text-yellow-500 mr-2 ml-1">nightlight</mat-icon>
+    <span class="h-6 w-6 rounded-full bg-gray-600"></span>
+  </ng-container>
+</div>

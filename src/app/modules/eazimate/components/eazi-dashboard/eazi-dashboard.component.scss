@@ -1,0 +1,14 @@
+
+.scroll {
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: rgb(42, 51, 66);  
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #cacaca;
+        border-radius: 15%;    
+    }
+}
+.apexcharts-tooltip span {
+    color: #8d8d8d;
+}
